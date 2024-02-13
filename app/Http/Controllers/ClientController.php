@@ -58,4 +58,10 @@ class ClientController extends Controller
 
         return redirect('client/view');
     }
+
+    public function trash($id)
+    {
+        Client::find($id)->delete();
+        return redirect()->back();
+    }
 }
