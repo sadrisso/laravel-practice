@@ -64,4 +64,30 @@ class ClientController extends Controller
         Client::find($id)->delete();
         return redirect()->back();
     }
+
+    public function delete()
+    {
+        $client = Client::onlyTrashed()->get();
+        return view('client-trash', compact('client'));
+    }
+
+    public function restore($id)
+    {
+        $client = Client::withTrashed()->find($id);
+        if(!is_null($client))
+        {
+            $client->restore();
+        }
+        return redirect()->back();
+    }
+
+    public function force_delete($id)
+    {
+        $client = Client::onlyTrashed()->find($id);
+        if(!is_null($client))
+        {
+            $client->forceDelete();
+        }
+        return redirect()->back();
+    }
 }
