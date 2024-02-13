@@ -27,8 +27,8 @@
                 <td>{{$res->email}}</td>
                 <td>{{$res->password}}</td>
                 <td>
-                    <a href="{{url('')}}" class="btn btn-primary">Edit</a>
-                    <a href="{{url('')}}" class="btn btn-danger">Trash</a>
+                    <a href="{{route('client.edit', ['id' => $res->id])}}" class="btn btn-primary">Edit</a>
+                    <a href="{{route('client.trash', ['id' => $res->id])}}" class="btn btn-danger">Trash</a>
                 </td>
             </tr>
             @endforeach

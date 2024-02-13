@@ -11,22 +11,22 @@
 </head>
 <body class="container">
 
-    <form action="{{url('client/register')}}" method="post">
-        <h2 class="text-center mt-3">Client Registration</h2>
+    <form action="{{$url}}" method="post">
+        <h2 class="text-center mt-3">{{$title}}</h2>
         @csrf
         <div class="form-group">
             <label for="Name">Name</label>
-            <input type="text" class="form-control" id="name" placeholder="Enter name" name="name">
+            <input type="text" class="form-control" id="name" placeholder="Enter name" name="name" value="{{$client->name ?? ''}}">
         </div>
         <div class="form-group">
             <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" name="email">
+            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" name="email" value="{{$client->email ?? ''}}">
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">Password</label>
             <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password">
         </div>
-        <button type="submit" class="btn btn-dark form-control">Submit</button>
+        <button type="submit" class="btn btn-primary form-control">Submit</button>
     </form>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>

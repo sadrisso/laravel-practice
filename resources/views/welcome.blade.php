@@ -17,10 +17,10 @@
                 <a class="nav-link" href="{{url('client/register')}}">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{url('')}}">View</a>
+                <a class="nav-link" href="{{url('client/view')}}">View</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{url('')}}">Disabled</a>
+                <a class="nav-link" href="{{url('client/trash')}}">Disabled</a>
             </li>
         </ul>
     </nav>

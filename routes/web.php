@@ -11,3 +11,6 @@ Route::get('/', function ()
 Route::get('client/register', [ClientController::class, 'index']);
 Route::post('client/register', [ClientController::class, 'store']);
 Route::get('client/view', [ClientController::class, 'view']);
+Route::get('client/trash/{id}', [ClientController::class, 'trash'])->name('client.trash');
+Route::get('client/edit/{id}', [ClientController::class, 'edit'])->name('client.edit');
+Route::post('client/update/{id}', [ClientController::class, 'update'])->name('client.update');
