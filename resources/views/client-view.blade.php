@@ -7,25 +7,33 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
 <link rel="stylesheet" href="style.css">
-<title>Welcome</title>
+<title>View</title>
 </head>
 <body class="container">
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <ul class="nav ">
-            <li class="nav-item">
-                <a class="nav-link" href="{{url('client/register')}}">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{url('')}}">View</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{url('')}}">Disabled</a>
-            </li>
-        </ul>
-    </nav>
-
-    <h2 class="m-5 text-center">HI, I am learning laravel</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($client as $res)
+            <tr>
+                <td>{{$res->name}}</td>
+                <td>{{$res->email}}</td>
+                <td>{{$res->password}}</td>
+                <td>
+                    <a href="{{url('')}}" class="btn btn-primary">Edit</a>
+                    <a href="{{url('')}}" class="btn btn-danger">Trash</a>
+                </td>
+            </tr>
+            @endforeach
+        </tbody>
+    </table>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>

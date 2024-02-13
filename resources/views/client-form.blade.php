@@ -9,9 +9,10 @@
 <link rel="stylesheet" href="style.css">
 <title>Form</title>
 </head>
-<body>
+<body class="container">
 
     <form action="{{url('client/register')}}" method="post">
+        <h2 class="text-center mt-3">Client Registration</h2>
         @csrf
         <div class="form-group">
             <label for="Name">Name</label>
